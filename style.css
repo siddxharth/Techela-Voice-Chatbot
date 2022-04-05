@@ -1,73 +1,87 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
     animation: background-change;
-    animation-duration: 10s;
+    animation-duration: 0s;
     animation-iteration-count: infinite;
     animation-delay: 0.5s;
-    background-color: rgb(132, 0, 255);
+    background-color: rgb(173, 111, 255);
 }
 
 .navbar-container{
-    background: rgb(39, 39, 39);
+    background: rgb(190, 160, 245);
     width: 100%;
 }
+
 .navbar{
     display: flex;
     justify-content: space-between;
     margin-left: 50px;
     margin-right: 50px;
-    background: rgb(39, 39, 39);
+    max-height: 70px;
 }
 
 .right-nav-logo img{
-    height: 112px;
+    margin-top: 10px;
+    max-height: 53px;
+    margin-bottom: 3px;
 }
 
 .left-nav-logo img{
-    height: 100px;
+    margin-top: 10px;
+    max-height: 50px;
 }
 
-.nav-text{
-    font-size: 5rem;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
+.nav-text img{
+    height: 50px;
     margin-top: 10px;
 }
 
 .event-card{
-    height: 15rem;
-    width: 15rem;
+    height: 12rem;
+    width: 17rem;
     background-color: white;
     border-radius: 15px;
     padding: 5px 15px;
-    perspective: 1000px;
     margin: 50px;
-    transition: transform 1s;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    animation: card-background-change;
+    animation-duration: 0s;
+    animation-iteration-count: infinite;
+    background: white;
+    border: 3px solid white;
 }
 
 .event-title{
     font-size: 1.5rem;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 71, 186);
+    min-height: 90px;
+    animation: text-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
 }
-
 .event-date{
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: rgb(83, 83, 83);
 }
 
 .event-time{
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: rgb(83, 83, 83);
 }
 
 .event-venue{
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: rgb(83, 83, 83);
+    font-weight: bold; 
 }
 
 .pre-events-main{
@@ -101,22 +115,108 @@ body{
 }
 
 .main-techfest-events{
-    display: none;
+    /* display: none; */
 }
 
 .pre-techfest-events{
     display: none;
 }
 
-@keyframes background-change{
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1;
+}
+
+.techfest-news{
+    display: none;
+}
+
+.news{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.news-card{
+    background: white;
+    width: 600px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.news-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.news-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.news-date{
+    font-size: 1rem;
+    color: rgb(88, 88, 88);
+    margin-left: 50px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.news-content{
+    font-size: 1rem;
+    color: gray;
+    margin-left: 50px;
+}
+
+.techfest-date{
+    display: none;
+}
+
+.date-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+@keyframes card-background-change{
     0%{
-        background-color: rgb(132, 0, 255);
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(199, 156, 255);
     }
     50%{
-       background-color: rgb(174, 0, 218);
+        background-color: rgb(199, 156, 255);
+        border-color: rgb(255, 255, 255);
     }
+    border-color: rgb(228, 208, 255);
     100%{
-        background-color: rgb(132, 0, 255);
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(228, 208, 255);
     }
 
+}
+
+@keyframes text-animation {
+    0%{
+        color: rgb(0, 98, 255);
+    }
+    50%{
+        color: rgb(0, 71, 186);
+    }
+    100%{
+        color: rgb(0, 98, 255);
+    }
+    
 }

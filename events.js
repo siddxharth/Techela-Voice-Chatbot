@@ -15,7 +15,7 @@ techelaPreEvents.forEach((element, i) => {
     `;
 
     card.innerHTML += eventCard;
-
+    
     events_main.appendChild(card);
 });
 
