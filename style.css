@@ -44,23 +44,23 @@ body{
 .event-card{
     height: 12rem;
     width: 17rem;
-    background-color: white;
     border-radius: 15px;
     padding: 5px 15px;
     margin: 50px;
-    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    box-shadow: 0px 0px 30px rgb(211, 91, 255);
     animation: card-background-change;
     animation-duration: 0s;
     animation-iteration-count: infinite;
     background: white;
-    border: 3px solid white;
+    /* create a border with gradient */
+    border: 1px solid rgb(219, 126, 255);
 }
 
 .event-title{
     font-size: 1.5rem;
     font-weight: bold;
     color: rgb(0, 71, 186);
-    min-height: 90px;
+    /* min-height: 90px; */
     animation: text-animation;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -112,10 +112,11 @@ body{
     color: rgb(0, 0, 0);
     margin-top: 50px;
     margin-left: 50px;
+    align-items: center;
 }
 
 .main-techfest-events{
-    /* display: none; */
+    display: none;
 }
 
 .pre-techfest-events{
@@ -200,7 +201,6 @@ body{
         background-color: rgb(199, 156, 255);
         border-color: rgb(255, 255, 255);
     }
-    border-color: rgb(228, 208, 255);
     100%{
         background-color: rgb(255, 255, 255);
         border-color: rgb(228, 208, 255);
