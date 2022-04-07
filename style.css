@@ -134,11 +134,11 @@ body{
 }
 
 .main-techfest-events{
-    /* display: none; */
+    display: none;
 }
 
 .pre-techfest-events{
-    /* display: none; */
+    display: none;
 }
 
 .loading{
@@ -316,6 +316,21 @@ body{
     margin: 0 auto;
 }
 
+.hello-help{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    height: 70px;
+    width: 800px;
+    border-radius: 20px;
+    background: linear-gradient(to right, rgb(199, 156, 255), rgb(221, 195, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* center div horizontally */
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 /* Example Commands */
 
 .example-command{
