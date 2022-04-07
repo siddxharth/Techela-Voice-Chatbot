@@ -242,6 +242,7 @@ body{
 
 .techfest-date-container{
     display: none;
+    justify-content: center;
 }
 
 .date-main{
@@ -367,6 +368,24 @@ body{
 
 
   /* Example commands end */
+
+  .floor-map-container{
+    display: none;
+  }
+
+  .floor-map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    width: min-content;
+    margin: 20px auto;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(0, 71, 186);
+  }
 
 @keyframes card-background-change{
     0%{
