@@ -30,10 +30,72 @@
   <div class="loading">
     <img src="assets/loading.gif" alt="">
   </div>
+  <div class="hello-container">
+    <div class="hello">Hi, I am your Voice Assistant. Welcome to Techela 7.0!</div>
+  </div>
+
+  <!-- Example Commands -->
+  <div class="example-command">
+    <h1 class="ml11">
+      <span class="text-wrapper">
+        <span class="line line1"></span>
+        <span class="letters"></span>
+      </span>
+    </h1>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="commands.js"></script>
+  <script>
+    var x = 0;
+    var text = document.querySelector(".letters");
+    text.textContent = exampleCommands[x];
+    while(x<7){
+    if(x==6){
+      x=0;
+    } else {
+      x++;
+    }
+  </script>
+  <script>
+    var textWrapper = document.querySelector('.ml11 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml11 .line',
+        scaleY: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 700
+      })
+      .add({
+        targets: '.ml11 .line',
+        translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+        easing: "easeOutExpo",
+        duration: 700,
+        delay: 100
+      }).add({
+        targets: '.ml11 .letter',
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=775',
+        delay: (el, i) => 34 * (i + 1)
+      }).add({
+        targets: '.ml11',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+
+  <!-- Example commands end -->
 
   <div class="pre-techfest-events">
     <div class="pre-events-title">
-      Pre Techfest Events...
+      Pre Techfest Events
     </div>
     <div class="pre-events-main">
       <!-- <div class="event-card">
@@ -45,16 +107,18 @@
     </div>
   </div>
   <div class="main-techfest-events">
-    <div class="main-events-title">
-      Techfest Events
+    <div class="main-techfest-events-container">
+      <div class="main-events-title">
+        Techfest Events
+      </div>
     </div>
     <div class="main-events-main">
       <div class="event-card">
-      <div class="event-title">Event Title</div>
-      <div class="event-venue"><img src="/assets/location.png" alt="">Event Venue</div>
-      <div class="event-date"><img src="/assets/calander.png" alt="">Event Date</div>
-      <div class="event-time"><img src="/assets/clock.png" alt="">Event Time</div>
-    </div>
+        <div class="event-title">Event Title</div>
+        <div class="event-venue"><img src="/assets/location.png" alt="">Event Venue</div>
+        <div class="event-date"><img src="/assets/calander.png" alt="">Event Date</div>
+        <div class="event-time"><img src="/assets/clock.png" alt="">Event Time</div>
+      </div>
     </div>
   </div>
   <script src="events-data.js"></script>
@@ -63,24 +127,31 @@
 
   <div class="techfest-news">
     <div class="news">
+      <div class="news-heading">
+        Techfest News
+      </div>
       <div class="news-main">
-        <div class="news-card">
+        <!-- <div class="news-card">
           <div class="news-title">News Title</div>
           <div class="news-date">News Date</div>
           <div class="news-content">News Content</div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
   <script src="news.js"></script>
 
-  <!-- <div class="techfest-time">
-    <div class="time-main"></div>
-    <script src="time.js"></script>
-  </div> -->
+  <div class="techfest-time-container">
+    <div class="techfest-time">
+      <div id="time" class="time-main"></div>
+    </div>
+  </div>
+  <script src="time.js"></script>
 
-  <div class="techfest-date">
-    <div id="date" class="date-main"></div>
+  <div class="techfest-date-container">
+    <div class="techfest-date">
+      <div id="date" class="date-main"></div>
+    </div>
   </div>
   <script src="date.js"></script>
 </body>
@@ -92,7 +163,7 @@
   pre techfest events
   news
   techfest events
-  weather x
+  weather
   time 
-
+  date
  -->
